@@ -20,10 +20,10 @@ size_t  left_size = 0;
 	}
 
 	if (tree->left)
-	left_size += + 1 + binary_tree_height(tree->left);
+	left_size += 1 + binary_tree_height(tree->left);
 
 	if (tree->right)
-	right_size += + 1 + binary_tree_height(tree->right);
+	right_size += 1 + binary_tree_height(tree->right);
 
 			if (left_size > right_size)
 			{
