@@ -3,13 +3,13 @@
  * binary_tree_balance - measuring the balance factor of a binary tree
  * @tree: pointer to the root node of the tree to measure
  *
- * Return: if tree is NULL return 0, if not return the balance factor of the binary tree
+ * Return: if tree is NULL return 0, if not return the balance factor
  */
 
 int binary_tree_balance(const binary_tree_t *tree)
 {
 	int left_size = 0;
-        int right_size = 0;
+	int right_size = 0;
 
 	if (tree == NULL)
 
@@ -17,7 +17,7 @@ int binary_tree_balance(const binary_tree_t *tree)
 
 	left_size = binary_tree_height(tree->left);
 	right_size = binary_tree_height(tree->right);
-	
+
 	return (left_size - right_size);
 }
 
@@ -32,7 +32,7 @@ int binary_tree_balance(const binary_tree_t *tree)
 size_t binary_tree_height(const binary_tree_t *tree)
 {
 	size_t  left_size = 0;
-       	size_t  right_size = 0;
+	size_t  right_size = 0;
 
 	if (tree == NULL)
 	{
@@ -45,5 +45,5 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	if (tree->right)
 	right_size = binary_tree_height(tree->right);
 
-	return (left_size > right_size ? left_size : right_size) + 1;
+	return ((left_size > right_size ? left_size : right_size) + 1);
 }
