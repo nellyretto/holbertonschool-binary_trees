@@ -4,28 +4,33 @@
  * binary_tree_height - measuring the height of a binary tree
  * @tree: pointer to root of the node for measuring height
  *
- * Return: 0 if tree is NULL
+ * Return: Always Success 0
  *
  */
 
 size_t binary_tree_height(const binary_tree_t *tree)
 
-
 {
+size_t  left_size = 0;
+	 size_t  right_size = 0;
+
 	if (tree == NULL)
 	{
 		return (0);
 	}
 
-	size_t left_height = binary_tree_height(tree->left);
-	size_t right_height = binary_tree_height(tree->right);
+	if (tree->left)
+	left_size += + 1 + binary_tree_height(tree->left);
 
-			if (left_height > right_height)
+	if (tree->right)
+	right_size += + 1 + binary_tree_height(tree->right);
+
+			if (left_size > right_size)
 			{
-				return (left_height + 1);
+				return (left_size);
 			}
 			else
 			{
-				return (right_height + 1);
+				return (right_size);
 			}
 }
